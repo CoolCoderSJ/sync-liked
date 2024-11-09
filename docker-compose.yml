@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  api:
+  app:
     build:
       context: .
     ports:
@@ -10,7 +10,7 @@ services:
       SPOTIFY_CLIENT_ID: "YOUR_SPOTIFY_CLIENT_ID"
       SPOTIFY_CLIENT_SECRET: "YOUR_SPOTIFY_CLIENT_SECRET"
       BASE_URL: "YOUR_BASE_URL"
-      MONGO_URI: "mongodb://root:example@db:27017"
+      MONGO_URI: "mongodb://root:example@db:27017?authSource=admin"
     restart: unless-stopped
 
   db:
