@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+    ports:
+      - "9373:9373"
+    environment:
+      SPOTIFY_CLIENT_ID: "YOUR_SPOTIFY_CLIENT_ID"
+      SPOTIFY_CLIENT_SECRET: "YOUR_SPOTIFY_CLIENT_SECRET"
+      BASE_URL: "YOUR_BASE_URL"
+      MONGO_URI: "mongodb://root:example@db:27017"
+    restart: unless-stopped
+
+  db:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./db:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
