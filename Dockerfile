@@ -2,9 +2,11 @@ FROM ruby:slim
 
 WORKDIR /app
 
-COPY . .
+COPY Gemfile Gemfile.lock ./
 
-RUN bundle install
+RUN gem install bundler && bundle install
+
+COPY . .
 
 EXPOSE 9373
 
