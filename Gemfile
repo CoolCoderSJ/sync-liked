@@ -1,7 +1,9 @@
-gem 'rufus-scheduler'
+source "https://rubygems.org"
+
+gem 'sinatra'
 gem 'httparty'
 gem 'mongo'
-gem 'sinatra'
+gem 'rackup'
 gem 'puma'
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem "rackup", "~> 2.2"
+gem 'tzinfo-data'
+gem 'rufus-scheduler'
