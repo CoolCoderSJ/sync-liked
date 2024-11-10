@@ -3,6 +3,7 @@ require 'httparty'
 require 'mongo'
 
 set :port, 9373
+set :bind, '0.0.0.0'
 BASE = ENV['BASE_URL']
 
 client = Mongo::Client.new(ENV['MONGO_URI'])
